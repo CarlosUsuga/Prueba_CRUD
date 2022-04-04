@@ -7,16 +7,18 @@
         android:title="@string/titulo_switch"
         app:actionLayout="@layout/switch_item"
         app:showAsAction="always"></item>
-    <item
-        android:id="@+id/itNuevo"
-        android:icon="@drawable/ic_nuevo"
-        android:title="@string/titulo_nuevo"
-        app:showAsAction="always" />
+
     <item
         android:id="@+id/searchView"
         android:icon="@drawable/ic_search_black_24dp"
         android:title="@string/titulo_search"
         app:actionViewClass="android.widget.SearchView"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/itNuevo"
+        android:icon="@drawable/ic_nuevo"
+        android:title="@string/titulo_nuevo"
         app:showAsAction="always" />
 
 </menu>

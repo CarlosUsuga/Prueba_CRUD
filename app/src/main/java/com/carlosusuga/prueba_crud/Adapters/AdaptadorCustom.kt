@@ -51,9 +51,10 @@ class AdaptadorCustom( var context: Context, items:ArrayList<ContactoClass>):Bas
         val item = getItem(position) as ContactoClass
 
         //Asignacion de valores a elementos graficos
-        viewHolder?.firtName?.text = item.firtName + " " + item.firtLastName
         viewHolder?.numDocumento?.text = item.numDocumento.toString()
-        //viewHolder?.foto?.setImageResource(item.foto)
+        viewHolder?.firtName?.text = item.firtName
+        viewHolder?.firtLastName?.text = item.firtLastName
+        viewHolder?.foto?.setImageResource(item.foto)
 
         return vista!!
     }
@@ -110,7 +111,7 @@ class AdaptadorCustom( var context: Context, items:ArrayList<ContactoClass>):Bas
             numDocumento = vista.findViewById(R.id.numDocumento)
             firtName = vista.findViewById(R.id.firtName)
             firtLastName = vista.findViewById(R.id.firtLastName)
-          //  foto = vista.findViewById(R.id.ivFoto)
+            foto = vista.findViewById(R.id.ivFoto)
 
         }
     }
