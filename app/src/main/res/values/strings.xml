@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Prueba_CRUD</string>
+
+    <string name="titulo_nuevo">Nuevo Contacto</string>
+    <string name="titulo_search">Buscar contacto</string>
+    <string name="titulo_switch">Cambiar vista</string>
+
+    <string name="titulo_edad">Edad</string>
+    <string name="titulo_telefono">Telefono</string>
+    <string name="titulo_direccion">Direccion</string>
+    <string name="titulo_email">Email</string>
+
+    <string name="titulo_eliminar">Eliminar Usuario</string>
+    <string name="titulo_actualizar">Actualizar Contacto</string>
+
+    <string name="tipo_documento">Tipo de documento</string>
+    <string name="num_documento">Número de documento</string>
+    <string name="primer_nombre">Primer Nombre</string>
+    <string name="segundo_nombre">Segundo Nombre</string>
+    <string name="primer_apellido">Primer Apellido</string>
+    <string name="segundo_apellido">Segundo apellido</string>
+    <string name="tipo_sexo">Tipo de Sexo</string>
+    <string name="edad">Edad</string>
+
+    <string name="sex_masculino">Masculino</string>
+    <string name="sex_femenino">Femenino</string>
+    
+    <string name="tipo_doc_cc">C.C</string>
+    <string name="tipo_doc_ce">C.E</string>
+    <string name="tipo_doc_pasaporte">Pasaporte</string>
+
+</resources>
