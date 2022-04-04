@@ -112,7 +112,7 @@ class AdaptadorCustomGrid(var context: Context, items:ArrayList<ContactoClass>):
             firstName = vista.findViewById(R.id.firtName)
             firstLastName = vista.findViewById(R.id.firtLastName)
             numDocumento = vista.findViewById(R.id.numDocumento)
-           // foto = vista.findViewById(R.id.ivFoto)
+            foto = vista.findViewById(R.id.ivFoto)
 
         }
     }

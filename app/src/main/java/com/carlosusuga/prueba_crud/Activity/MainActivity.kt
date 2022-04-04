@@ -159,8 +159,8 @@ class MainActivity : AppCompatActivity() {
         val secondName = findViewById<EditText>(R.id.edtSecondName)
         val firstLastName = findViewById<EditText>(R.id.edtFirtLastName)
         val secondLastName = findViewById<EditText>(R.id.edtSecondLastName)
-        val edad = findViewById<EditText>(R.id.edtEdad)
         val tipoSexo = findViewById<EditText>(R.id.edtSexo)
+        val edad = findViewById<EditText>(R.id.edtEdad)
         val ivFoto = findViewById<ImageView>(R.id.ivFoto)
 
         tipoDoc.setText(contacto.tipoDocumento, TextView.BufferType.EDITABLE)
@@ -169,8 +169,8 @@ class MainActivity : AppCompatActivity() {
         secondName.setText(contacto.secondName, TextView.BufferType.EDITABLE)
         firstLastName.setText(contacto.firtLastName, TextView.BufferType.EDITABLE)
         secondLastName.setText(contacto.secondLastName, TextView.BufferType.EDITABLE)
-        edad.setText(contacto.edad.toString() + " Años", TextView.BufferType.EDITABLE)
         tipoSexo.setText(contacto.sexo, TextView.BufferType.EDITABLE)
+        edad.setText(contacto.edad.toString() + " Años", TextView.BufferType.EDITABLE)
         ivFoto.setImageResource(contacto.foto)
 
         var posicion = 0
