@@ -48,6 +48,7 @@
         android:ems="10"
         android:hint="@string/num_documento"
         android:inputType="number"
+        android:singleLine="true"
         app:layout_constraintEnd_toEndOf="@+id/edtTipoDocumento"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/edtTipoDocumento"
@@ -61,6 +62,7 @@
         android:ems="10"
         android:hint="@string/primer_nombre"
         android:inputType="textPersonName"
+        android:singleLine="true"
         app:layout_constraintEnd_toEndOf="@+id/edtNumDocumento"
         app:layout_constraintStart_toStartOf="@+id/edtNumDocumento"
         app:layout_constraintTop_toBottomOf="@+id/edtNumDocumento" />
@@ -73,6 +75,7 @@
         android:ems="10"
         android:hint="@string/segundo_nombre"
         android:inputType="textPersonName"
+        android:singleLine="true"
         app:layout_constraintEnd_toEndOf="@+id/edtFirtName"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/edtFirtName"
@@ -86,6 +89,7 @@
         android:ems="10"
         android:hint="@string/primer_apellido"
         android:inputType="textPersonName"
+        android:singleLine="true"
         app:layout_constraintEnd_toEndOf="@+id/edtSecondName"
         app:layout_constraintStart_toStartOf="@+id/edtSecondName"
         app:layout_constraintTop_toBottomOf="@+id/edtSecondName" />
@@ -98,6 +102,7 @@
         android:ems="10"
         android:hint="@string/segundo_apellido"
         android:inputType="textPersonName"
+        android:singleLine="true"
         app:layout_constraintEnd_toEndOf="@+id/edtFirtLastName"
         app:layout_constraintStart_toStartOf="@+id/edtFirtLastName"
         app:layout_constraintTop_toBottomOf="@+id/edtFirtLastName" />
@@ -123,6 +128,7 @@
         android:ems="10"
         android:hint="@string/edad"
         android:inputType="number"
+        android:singleLine="true"
         app:layout_constraintEnd_toEndOf="@+id/edtSexo"
         app:layout_constraintStart_toStartOf="@+id/edtSexo"
         app:layout_constraintTop_toBottomOf="@+id/edtSexo" />

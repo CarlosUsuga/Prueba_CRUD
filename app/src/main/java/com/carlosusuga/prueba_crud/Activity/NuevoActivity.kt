@@ -186,7 +186,7 @@ class NuevoActivity : AppCompatActivity() {
         val ivFoto = findViewById<ImageView>(R.id.ivFoto)
 
         tipoDoc.setText(contacto.tipoDocumento, TextView.BufferType.EDITABLE)
-        numDoc.setText(contacto.numDocumento, TextView.BufferType.EDITABLE)
+        numDoc.setText(contacto.numDocumento.toString(), TextView.BufferType.EDITABLE)
         firstName.setText(contacto.firtName, TextView.BufferType.EDITABLE)
         secondName.setText(contacto.secondName, TextView.BufferType.EDITABLE)
         firstLastName.setText(contacto.firtLastName, TextView.BufferType.EDITABLE)

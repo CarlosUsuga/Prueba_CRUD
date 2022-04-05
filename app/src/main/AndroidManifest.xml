@@ -11,10 +11,12 @@
         android:theme="@style/Theme.Prueba_CRUD">
         <activity
             android:name=".Activity.NuevoActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".Activity.MainActivity"/>
         <activity
             android:name=".Activity.DetalleActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".Activity.MainActivity"/>
         <activity
             android:name=".Activity.MainActivity"
             android:exported="true">

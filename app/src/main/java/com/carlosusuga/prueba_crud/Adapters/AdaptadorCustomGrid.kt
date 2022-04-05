@@ -51,8 +51,7 @@ class AdaptadorCustomGrid(var context: Context, items:ArrayList<ContactoClass>):
 
         //Asignacion de valores a elementos graficos
         viewHolder?.firstName?.text = item.firtName + " " + item.firtLastName
-        viewHolder?.numDocumento?.text = item.numDocumento.toString()
-        //viewHolder?.foto?.setImageResource(item.foto)
+        viewHolder?.foto?.setImageResource(item.foto)
 
         return vista!!
     }
@@ -104,14 +103,12 @@ class AdaptadorCustomGrid(var context: Context, items:ArrayList<ContactoClass>):
 
         var firstName: TextView? = null
         var firstLastName: TextView? = null
-        var numDocumento: TextView? = null
         var foto: ImageView? = null
 
         init {
 
             firstName = vista.findViewById(R.id.firtName)
             firstLastName = vista.findViewById(R.id.firtLastName)
-            numDocumento = vista.findViewById(R.id.numDocumento)
             foto = vista.findViewById(R.id.ivFoto)
 
         }

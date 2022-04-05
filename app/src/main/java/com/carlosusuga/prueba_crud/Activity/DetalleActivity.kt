@@ -43,12 +43,13 @@ class DetalleActivity : AppCompatActivity() {
 
         index = intent.getStringExtra("ID")?.toInt()!!
 
-        mapearDatos()
-
         if (intent.hasExtra("ID")){
             index = intent.getStringExtra("ID")!!.toInt()
             rellenarDatos(index)
         }
+
+        mapearDatos()
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -88,51 +89,38 @@ class DetalleActivity : AppCompatActivity() {
     fun mapearDatos(){
         val contacto = MainActivity.obtenerContacto(index)
 
-        val tipoDoc = findViewById<EditText>(R.id.edtTipoDocumento)
-        val numDoc = findViewById<EditText>(R.id.edtNumDocumento)
-        val firstName = findViewById<EditText>(R.id.edtFirtName)
-        val secondName = findViewById<EditText>(R.id.edtSecondName)
-        val firstLastName = findViewById<EditText>(R.id.edtFirtLastName)
-        val secondLastName = findViewById<EditText>(R.id.edtSecondLastName)
-        val tipoSexo = findViewById<EditText>(R.id.edtSexo)
-        val edad = findViewById<EditText>(R.id.edtEdad)
-        val ivFoto = findViewById<ImageView>(R.id.ivFoto)
+        val tipoDoc = findViewById<TextView>(R.id.tvTpDoc)
+        val numDoc = findViewById<TextView>(R.id.tvNumDoc)
+        val firstName = findViewById<TextView>(R.id.tvNombres)
+        val tipoSexo = findViewById<TextView>(R.id.tvSexo)
+        val edad = findViewById<TextView>(R.id.tvIndoEdad)
+        //val ivFoto = findViewById<ImageView>(R.id.ivFoto)
 
-        tipoDoc.setText(contacto.tipoDocumento, TextView.BufferType.EDITABLE)
-        numDoc.setText(contacto.numDocumento, TextView.BufferType.EDITABLE)
-        firstName.setText(contacto.firtName, TextView.BufferType.EDITABLE)
-        secondName.setText(contacto.secondName, TextView.BufferType.EDITABLE)
-        firstLastName.setText(contacto.firtLastName, TextView.BufferType.EDITABLE)
-        secondLastName.setText(contacto.secondLastName, TextView.BufferType.EDITABLE)
-        tipoSexo.setText(contacto.sexo, TextView.BufferType.EDITABLE)
-        edad.setText(contacto.edad.toString() + " Años", TextView.BufferType.EDITABLE)
+        tipoDoc.text = contacto.tipoDocumento
+        numDoc.text = contacto.numDocumento.toString()
+        firstName.text = contacto.firtName + " " + contacto.secondName + " " + contacto.firtLastName + " " + contacto.secondLastName
+        tipoSexo.text = contacto.sexo
+        edad.text = contacto.edad.toString() + " Años"
 
-        ivFoto.setImageResource(contacto.foto)
-
+        //ivFoto.setImageResource(contacto.foto)
     }
 
     fun rellenarDatos(index: Int){
         val contacto = MainActivity.obtenerContacto(index)
 
-        val tipoDoc = findViewById<EditText>(R.id.edtTipoDocumento)
-        val numDoc = findViewById<EditText>(R.id.edtNumDocumento)
-        val firstName = findViewById<EditText>(R.id.edtFirtName)
-        val secondName = findViewById<EditText>(R.id.edtSecondName)
-        val firstLastName = findViewById<EditText>(R.id.edtFirtLastName)
-        val secondLastName = findViewById<EditText>(R.id.edtSecondLastName)
-        val tipoSexo = findViewById<EditText>(R.id.edtSexo)
-        val edad = findViewById<EditText>(R.id.edtEdad)
-        val ivFoto = findViewById<ImageView>(R.id.ivFoto)
+        val tipoDoc = findViewById<TextView>(R.id.tvTpDoc)
+        val numDoc = findViewById<TextView>(R.id.tvNumDoc)
+        val firstName = findViewById<TextView>(R.id.tvNombres)
+        val tipoSexo = findViewById<TextView>(R.id.tvSexo)
+        val edad = findViewById<TextView>(R.id.tvIndoEdad)
+       // val ivFoto = findViewById<ImageView>(R.id.ivFoto)
 
-        tipoDoc.setText(contacto.tipoDocumento, TextView.BufferType.EDITABLE)
-        numDoc.setText(contacto.numDocumento, TextView.BufferType.EDITABLE)
-        firstName.setText(contacto.firtName, TextView.BufferType.EDITABLE)
-        secondName.setText(contacto.secondName, TextView.BufferType.EDITABLE)
-        firstLastName.setText(contacto.firtLastName, TextView.BufferType.EDITABLE)
-        secondLastName.setText(contacto.secondLastName, TextView.BufferType.EDITABLE)
-        tipoSexo.setText(contacto.sexo, TextView.BufferType.EDITABLE)
-        edad.setText(contacto.edad.toString() + " Años", TextView.BufferType.EDITABLE)
-        ivFoto.setImageResource(contacto.foto)
+        tipoDoc.text = contacto.tipoDocumento
+        numDoc.text = contacto.numDocumento.toString()
+        firstName.text = contacto.firtName + " " + contacto.secondName + " " + contacto.firtLastName + " " + contacto.secondLastName
+        tipoSexo.text = contacto.sexo
+        edad.text = contacto.edad.toString() + " Años"
+//        ivFoto.setImageResource(contacto.foto)
 
         var posicion = 0
         for (foto in fotos){

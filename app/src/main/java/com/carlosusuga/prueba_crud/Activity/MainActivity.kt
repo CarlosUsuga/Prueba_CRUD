@@ -42,18 +42,22 @@ class MainActivity : AppCompatActivity() {
 
         fun agregarContacto(contacto: ContactoClass){
             adaptador?.addItem(contacto)
+            adaptadorGrid?.addItem(contacto)
         }
 
         fun obtenerContacto(index: Int): ContactoClass {
             return  adaptador?.getItem(index) as ContactoClass
+            return adaptadorGrid?.getItem(index) as ContactoClass
         }
 
         fun eliminarContacto(index:Int){
             adaptador?.removeItem(index)
+            adaptadorGrid?.removeItem(index)
         }
 
         fun actualizarContacto(index:Int, nuevoContacto: ContactoClass){
             adaptador?.updateItem(index, nuevoContacto)
+            adaptadorGrid?.updateItem(index, nuevoContacto)
         }
     }
 
@@ -96,7 +100,7 @@ class MainActivity : AppCompatActivity() {
         val itemBusqueda = menu?.findItem(R.id.searchView)
         val searchView = itemBusqueda?.actionView as SearchView
 
-        val itemSwitch = menu.findItem(R.id.swUser)
+        val itemSwitch = menu.findItem(R.id.switchView)
         itemSwitch?.setActionView(R.layout.switch_item)
         val switchView = itemSwitch?.actionView?.findViewById<Switch>(R.id.sCambiaVista)
 
@@ -124,7 +128,7 @@ class MainActivity : AppCompatActivity() {
         })
 
         switchView?.setOnCheckedChangeListener { buttonView, isChecked ->
-            searchView?.queryHint
+            swUser?.showNext()
         }
 
         return super.onCreateOptionsMenu(menu)
