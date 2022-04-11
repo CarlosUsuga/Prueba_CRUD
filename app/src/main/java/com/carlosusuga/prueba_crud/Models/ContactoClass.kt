@@ -1,37 +1,34 @@
 package com.carlosusuga.prueba_crud.Models
 
 class ContactoClass(
-    tipoDocumento:String,
     numDocumento: Int,
-    firtName:String,
+    tipoDocumento:String,
+    firstName:String,
     secondName:String,
-    firtLastName:String,
+    firstLastName:String,
     secondLastName:String,
     sexo:String,
-    edad: Int,
-    foto: Int
+    edad: Int
 )
 {
 
-    var tipoDocumento:String = ""
-    var numDocumento:Int = 0
-    var firtName:String = ""
-    var secondName:String = ""
-    var firtLastName:String = ""
-    var secondLastName:String = ""
-    var sexo:String = ""
-    var edad:Int = 0
-    var foto:Int = 0
+    var numDocumento:Int? = null
+    var tipoDocumento:String? = null
+    var firstName:String? = null
+    var secondName:String? = null
+    var firstLastName:String? = null
+    var secondLastName:String? = null
+    var sexo:String? = null
+    var edad:Int? = null
 
     init {
-        this.tipoDocumento = tipoDocumento
         this.numDocumento = numDocumento
-        this.firtName = firtName
+        this.tipoDocumento = tipoDocumento
+        this.firstName = firstName
         this.secondName = secondName
-        this.firtLastName = firtLastName
+        this.firstLastName = firstLastName
         this.secondLastName = secondLastName
         this.sexo = sexo
         this.edad = edad
-        this.foto = foto
     }
 }

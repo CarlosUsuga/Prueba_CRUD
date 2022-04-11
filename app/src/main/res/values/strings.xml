@@ -29,4 +29,8 @@
     <string name="tipo_doc_ce">C.E</string>
     <string name="tipo_doc_pasaporte">Pasaporte</string>
 
+    <string name="boton_guardar">Guardar</string>
+    <string name="boton_actualizar">Actualizar</string>
+    <string name="boton_Eliminar">Eliminar</string>
+
 </resources>

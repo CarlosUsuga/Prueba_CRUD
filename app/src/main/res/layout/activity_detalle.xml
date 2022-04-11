@@ -6,79 +6,136 @@
     android:layout_height="match_parent"
     tools:context=".Activity.DetalleActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarMain"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/Theme.AppCompat.Light"
-        tools:ignore="MissingConstraints" />
 
-    <ImageView
-        android:id="@+id/ivFotos"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+    <EditText
+        android:id="@+id/edtTipoDocumento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="@string/tipo_documento"
+        android:inputType="text"
+        android:singleLine="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarMain"
-        app:srcCompat="@drawable/foto_04" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvTpDoc"
+    <EditText
+        android:id="@+id/edtNumDocumento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/ivFotos"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="@+id/ivFotos"
-        app:layout_constraintTop_toBottomOf="@+id/ivFotos" />
-
-    <TextView
-        android:id="@+id/tvNumDoc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/tvTpDoc"
-        app:layout_constraintStart_toStartOf="@+id/tvTpDoc"
-        app:layout_constraintTop_toBottomOf="@+id/tvTpDoc" />
-
-    <TextView
-        android:id="@+id/tvNombres"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/tvNumDoc"
-        app:layout_constraintStart_toStartOf="@+id/tvNumDoc"
-        app:layout_constraintTop_toBottomOf="@+id/tvNumDoc" />
-
-    <TextView
-        android:id="@+id/tvIndoEdad"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/tvSexo"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/num_documento"
+        android:inputType="number"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="@+id/edtTipoDocumento"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tvSexo"
-        app:layout_constraintTop_toBottomOf="@+id/tvSexo" />
+        app:layout_constraintStart_toStartOf="@+id/edtTipoDocumento"
+        app:layout_constraintTop_toBottomOf="@+id/edtTipoDocumento" />
 
-    <TextView
-        android:id="@+id/tvSexo"
+    <EditText
+        android:id="@+id/edtFirtName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/tvNombres"
-        app:layout_constraintHorizontal_bias="0.358"
-        app:layout_constraintStart_toStartOf="@+id/tvNombres"
-        app:layout_constraintTop_toBottomOf="@+id/tvNombres" />
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/primer_nombre"
+        android:inputType="textPersonName"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="@+id/edtNumDocumento"
+        app:layout_constraintStart_toStartOf="@+id/edtNumDocumento"
+        app:layout_constraintTop_toBottomOf="@+id/edtNumDocumento" />
+
+    <EditText
+        android:id="@+id/edtSecondName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/segundo_nombre"
+        android:inputType="textPersonName"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="@+id/edtFirtName"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/edtFirtName"
+        app:layout_constraintTop_toBottomOf="@+id/edtFirtName" />
+
+    <EditText
+        android:id="@+id/edtFirtLastName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/primer_apellido"
+        android:inputType="textPersonName"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="@+id/edtSecondName"
+        app:layout_constraintStart_toStartOf="@+id/edtSecondName"
+        app:layout_constraintTop_toBottomOf="@+id/edtSecondName" />
+
+    <EditText
+        android:id="@+id/edtSecondLastName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/segundo_apellido"
+        android:inputType="textPersonName"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="@+id/edtFirtLastName"
+        app:layout_constraintStart_toStartOf="@+id/edtFirtLastName"
+        app:layout_constraintTop_toBottomOf="@+id/edtFirtLastName" />
+
+    <EditText
+        android:id="@+id/edtSexo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="@string/tipo_sexo"
+        android:inputType="text"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="@+id/edtSecondLastName"
+        app:layout_constraintStart_toStartOf="@+id/edtSecondLastName"
+        app:layout_constraintTop_toBottomOf="@+id/edtSecondLastName" />
+
+    <EditText
+        android:id="@+id/edtEdad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/edad"
+        android:inputType="number"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="@+id/edtSexo"
+        app:layout_constraintStart_toStartOf="@+id/edtSexo"
+        app:layout_constraintTop_toBottomOf="@+id/edtSexo" />
+
+    <Button
+        android:id="@+id/bActualizar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/boton_actualizar"
+        app:layout_constraintEnd_toEndOf="@+id/edtEdad"
+        app:layout_constraintStart_toStartOf="@+id/edtEdad"
+        app:layout_constraintTop_toBottomOf="@+id/edtEdad" />
+
+    <Button
+        android:id="@+id/bEliminar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/boton_Eliminar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/bActualizar"
+        app:layout_constraintStart_toStartOf="@+id/bActualizar"
+        app:layout_constraintTop_toBottomOf="@+id/bActualizar"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

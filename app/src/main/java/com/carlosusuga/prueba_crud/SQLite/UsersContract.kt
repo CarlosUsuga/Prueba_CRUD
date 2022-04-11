@@ -9,17 +9,17 @@ class UsersContract {
         val VERSION = 1
         class Entrada: BaseColumns {
             companion object {
-                val NOMBRE_TABLA = "User"
+                //val VERSION: Int = 1
+                val NOMBRE_TABLA = "'contactos'"
 
-                val COLUMNA_TDOC = ""
-                val COLUMNA_DOCUMENTO = ""
-                val COLUMNA_PNOMBRE = ""
-                val COLUMNA_SNOMBRE = ""
-                val COLUMNA_PAPELLIDO = ""
-                val COLUMNA_SAPELLIDO = ""
-                val COLUMNA_SEXO = ""
-                val COLUMNA_EDAD = ""
-                val COLUMNA_FOTO = ""
+                val COLUMNA_DOCUMENTO = "'numDocumento'"
+                val COLUMNA_TDOC = "'tipoDocumento'"
+                val COLUMNA_PNOMBRE = "'firstName'"
+                val COLUMNA_SNOMBRE = "'secondName'"
+                val COLUMNA_PAPELLIDO = "'firstLastName'"
+                val COLUMNA_SAPELLIDO = "'secondLastName'"
+                val COLUMNA_SEXO = "'sexo'"
+                val COLUMNA_EDAD = "'edad'"
             }
         }
     }

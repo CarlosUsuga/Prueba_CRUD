@@ -6,45 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".Activity.NuevoActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarMain"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/Theme.AppCompat.Light"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/ivFoto"
-        android:layout_width="205dp"
-        android:layout_height="190dp"
-        android:layout_marginTop="28dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarMain"
-        app:srcCompat="@drawable/foto_02" />
 
     <EditText
         android:id="@+id/edtTipoDocumento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="130dp"
         android:ems="10"
         android:gravity="start|top"
         android:hint="@string/tipo_documento"
-        android:inputType="textMultiLine"
-        app:layout_constraintEnd_toEndOf="@+id/ivFoto"
-        app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toStartOf="@+id/ivFoto"
-        app:layout_constraintTop_toBottomOf="@+id/ivFoto" />
+        android:inputType="text"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/edtNumDocumento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/num_documento"
         android:inputType="number"
@@ -58,7 +39,7 @@
         android:id="@+id/edtFirtName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/primer_nombre"
         android:inputType="textPersonName"
@@ -71,7 +52,7 @@
         android:id="@+id/edtSecondName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/segundo_nombre"
         android:inputType="textPersonName"
@@ -85,7 +66,7 @@
         android:id="@+id/edtFirtLastName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/primer_apellido"
         android:inputType="textPersonName"
@@ -98,7 +79,7 @@
         android:id="@+id/edtSecondLastName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/segundo_apellido"
         android:inputType="textPersonName"
@@ -111,11 +92,12 @@
         android:id="@+id/edtSexo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:gravity="start|top"
         android:hint="@string/tipo_sexo"
-        android:inputType="textMultiLine"
+        android:inputType="text"
+        android:singleLine="true"
         app:layout_constraintEnd_toEndOf="@+id/edtSecondLastName"
         app:layout_constraintStart_toStartOf="@+id/edtSecondLastName"
         app:layout_constraintTop_toBottomOf="@+id/edtSecondLastName" />
@@ -124,7 +106,7 @@
         android:id="@+id/edtEdad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/edad"
         android:inputType="number"
@@ -132,5 +114,17 @@
         app:layout_constraintEnd_toEndOf="@+id/edtSexo"
         app:layout_constraintStart_toStartOf="@+id/edtSexo"
         app:layout_constraintTop_toBottomOf="@+id/edtSexo" />
+
+    <Button
+        android:id="@+id/bAdd"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/boton_guardar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/edtEdad"
+        app:layout_constraintStart_toStartOf="@+id/edtEdad"
+        app:layout_constraintTop_toBottomOf="@+id/edtEdad"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

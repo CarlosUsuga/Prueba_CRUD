@@ -5,134 +5,78 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
+import com.carlosusuga.prueba_crud.Models.ContactoClass
 import com.carlosusuga.prueba_crud.R
+import com.carlosusuga.prueba_crud.SQLite.UsersCRUD
 
 
 class DetalleActivity : AppCompatActivity() {
 
-    var fotoIndex:Int = 0
-
-    val fotos = arrayOf(
-        R.drawable.foto_01,
-        R.drawable.foto_02,
-        R.drawable.foto_03,
-        R.drawable.foto_04,
-        R.drawable.foto_05,
-        R.drawable.foto_06
-    )
-
-    var foto: ImageView? = null
-
-    var index:Int = 0
+//    var crud: UsersCRUD? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detalle)
+/*
+        val numDocumento = findViewById<EditText>(R.id.edtNumDocumento)
+        val tipoDocumento = findViewById<EditText>(R.id.edtTipoDocumento)
+        val firstName = findViewById<EditText>(R.id.edtFirtName)
+        val secondName = findViewById<EditText>(R.id.edtSecondName)
+        val firstLastName = findViewById<EditText>(R.id.edtFirtLastName)
+        val secondLastName = findViewById<EditText>(R.id.edtSecondLastName)
+        val sexo = findViewById<EditText>(R.id.edtSexo)
+        val edad = findViewById<EditText>(R.id.edtEdad)
+        val bActualizar = findViewById<Button>(R.id.bActualizar)
+        val bEliminar = findViewById<Button>(R.id.bEliminar)
 
-        val toolbarMain = findViewById<Toolbar>(R.id.toolbarMain)
-        setSupportActionBar(toolbarMain)
+        val index = intent.getIntExtra(numDocumento.toString(), 0)
 
-        var actionBar = supportActionBar
-        actionBar?.setDisplayHomeAsUpEnabled(true)
+        crud = UsersCRUD(this)
 
-        foto = findViewById(R.id.ivFoto)
+        val contacto = crud?.getUser(index)
 
-        index = intent.getStringExtra("ID")?.toInt()!!
+        numDocumento.setText(contacto!!.numDocumento, TextView.BufferType.EDITABLE)
+        tipoDocumento.setText(contacto.tipoDocumento, TextView.BufferType.EDITABLE)
+        firstName.setText(contacto.firstName, TextView.BufferType.EDITABLE)
+        secondName.setText(contacto.secondName, TextView.BufferType.EDITABLE)
+        firstLastName.setText(contacto.firstLastName, TextView.BufferType.EDITABLE)
+        secondLastName.setText(contacto.secondLastName, TextView.BufferType.EDITABLE)
+        sexo.setText(contacto.sexo, TextView.BufferType.EDITABLE)
+        edad.setText(contacto.edad, TextView.BufferType.EDITABLE)
 
-        if (intent.hasExtra("ID")){
-            index = intent.getStringExtra("ID")!!.toInt()
-            rellenarDatos(index)
+        bActualizar.setOnClickListener {
+            crud?.updateUsers(ContactoClass(
+                numDocumento.text.toString().toInt(),
+                tipoDocumento.text.toString(),
+                firstName.text.toString(),
+                secondName.text.toString(),
+                firstLastName.text.toString(),
+                secondLastName.text.toString(),
+                sexo.text.toString(),
+                edad.text.toString().toInt()
+            ))
+            startActivity(Intent(this, MainActivity::class.java))
         }
 
-        mapearDatos()
-
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_detalle, menu)
-        return super.onCreateOptionsMenu(menu)
-    }
-
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item?.itemId) {
-
-            android.R.id.home -> {
-                finish()
-                return true
-            }
-
-            R.id.itActualizar -> {
-                val intent = Intent(this, NuevoActivity::class.java)
-                intent.putExtra("ID", index.toString())
-                startActivity(intent)
-                return true
-            }
-
-            R.id.itEliminar -> {
-                MainActivity.eliminarContacto(index)
-                finish()
-                return true
-            }
-
-            else -> {
-                return super.onOptionsItemSelected(item)
-            }
+        bEliminar.setOnClickListener {
+            crud?.deleteUsers(ContactoClass(
+                numDocumento.text.toString().toInt(),
+                tipoDocumento.text.toString(),
+                firstName.text.toString(),
+                secondName.text.toString(),
+                firstLastName.text.toString(),
+                secondLastName.text.toString(),
+                sexo.text.toString(),
+                edad.text.toString().toInt()
+            ))
+            startActivity(Intent(this, MainActivity::class.java))
         }
-
+*/
     }
 
-    fun mapearDatos(){
-        val contacto = MainActivity.obtenerContacto(index)
-
-        val tipoDoc = findViewById<TextView>(R.id.tvTpDoc)
-        val numDoc = findViewById<TextView>(R.id.tvNumDoc)
-        val firstName = findViewById<TextView>(R.id.tvNombres)
-        val tipoSexo = findViewById<TextView>(R.id.tvSexo)
-        val edad = findViewById<TextView>(R.id.tvIndoEdad)
-        //val ivFoto = findViewById<ImageView>(R.id.ivFoto)
-
-        tipoDoc.text = contacto.tipoDocumento
-        numDoc.text = contacto.numDocumento.toString()
-        firstName.text = contacto.firtName + " " + contacto.secondName + " " + contacto.firtLastName + " " + contacto.secondLastName
-        tipoSexo.text = contacto.sexo
-        edad.text = contacto.edad.toString() + " Años"
-
-        //ivFoto.setImageResource(contacto.foto)
-    }
-
-    fun rellenarDatos(index: Int){
-        val contacto = MainActivity.obtenerContacto(index)
-
-        val tipoDoc = findViewById<TextView>(R.id.tvTpDoc)
-        val numDoc = findViewById<TextView>(R.id.tvNumDoc)
-        val firstName = findViewById<TextView>(R.id.tvNombres)
-        val tipoSexo = findViewById<TextView>(R.id.tvSexo)
-        val edad = findViewById<TextView>(R.id.tvIndoEdad)
-       // val ivFoto = findViewById<ImageView>(R.id.ivFoto)
-
-        tipoDoc.text = contacto.tipoDocumento
-        numDoc.text = contacto.numDocumento.toString()
-        firstName.text = contacto.firtName + " " + contacto.secondName + " " + contacto.firtLastName + " " + contacto.secondLastName
-        tipoSexo.text = contacto.sexo
-        edad.text = contacto.edad.toString() + " Años"
-//        ivFoto.setImageResource(contacto.foto)
-
-        var posicion = 0
-        for (foto in fotos){
-            if(contacto.foto == foto){
-                fotoIndex = posicion
-            }
-            posicion++
-        }
-    }
-
-    override fun onResume() {
-        super.onResume()
-        mapearDatos()
-    }
 }
